@@ -1,19 +1,17 @@
 version: '3'
 services:
   app1:
-      restart: always
-      image: app:latest
-      expose:
-      - "5000"
+      build: ./app
       environment:
           APP_NAME: "application 1"
-  app2:
-      restart: always
-      image: app:latest
-      expose:
-      - "5000"
-      environment:
-          APP_NAME: "application 2"
+          PORT: 3000
+          NODE_ENV: "production"
+  #app2:
+      #consider getting nagios image.
+      # environment:
+      #     APP_NAME: "application 2"
+      #     PORT: 3000
+      #     NODE_ENV: "production"
   nginx:
       build: ./nginx
       restart: always
@@ -22,4 +20,4 @@ services:
       - 80:80
       links:
       - app1:app1
-      - app2:app2
+      #- app2:app2
