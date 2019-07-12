@@ -10,10 +10,10 @@ sudo apt-get update
 apt-cache policy docker-ce
 sudo apt-get install -y docker-ce
 
-# Running Docker without sudo
-sudo usermod -aG docker ${USER}
-su - ${USER}
-id -nG
+# # Running Docker without sudo
+# sudo usermod -aG docker ${USER}
+# su - ${USER}
+# id -nG
 
 # Installing docker-compose
 sudo curl -o /usr/local/bin/docker-compose -L "https://github.com/docker/compose/releases/download/1.11.2/docker-compose-$(uname -s)-$(uname -m)"
