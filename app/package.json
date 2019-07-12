@@ -1,0 +1,19 @@
+{
+  "name": "node-server",
+  "version": "1.0.0",
+  "description": "running web server on docker",
+  "main": "app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadavb2310/Node-Server-Docker.git"
+  },
+  "author": "nadavbi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nadavb2310/Node-Server-Docker/issues"
+  },
+  "homepage": "https://github.com/nadavb2310/Node-Server-Docker#readme"
+}
