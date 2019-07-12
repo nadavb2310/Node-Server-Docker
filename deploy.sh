@@ -28,7 +28,5 @@ sleep 2
 # Build images and run
 cd /home/Node-Server-Docker/app/
 sudo npm install
-sleep 20
-
 cd /home/Node-Server-Docker/
 sudo bash run.sh build
