@@ -23,6 +23,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # Check docker-compose
 docker-compose -v
+sleep 2
 
 # Build images and run
 cd app
