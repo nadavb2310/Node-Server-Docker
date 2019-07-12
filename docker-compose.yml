@@ -14,10 +14,11 @@ services:
       #     NODE_ENV: "production"
   nginx:
       build: ./nginx
-      restart: always
       image: my-nginx:latest
+      volumes:
+        - ./nginx.conf:/etc/nginx/nginx.conf
       ports:
-      - 80:80
+        - 80:80
       links:
-      - app1:app1
+        - app1:app1
       #- app2:app2
