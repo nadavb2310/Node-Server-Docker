@@ -26,6 +26,7 @@ docker-compose -v
 sleep 2
 
 # Build images and run
-alias proj="cd /home/Node-Server-Docker/app/"
+cd /home/Node-Server-Docker/app/
+exec bash
 sudo npm install
 sudo bash run.sh build
