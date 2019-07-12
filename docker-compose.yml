@@ -4,7 +4,7 @@ services:
     build: ./nginx
     links:
       - app1:app1
-      - app2:app2
+     # - app2:app2
     ports:
       - "80:80"
 
@@ -16,10 +16,10 @@ services:
     ports:
       - "3000:3000"
 
-  app2:
-    build: ./app
-    environment:
-      PORT: 3000
-      NODE_ENV: "production"
-    ports:
-      - "3001:3000"
+  # app2:
+  #   build: ./app
+  #   environment:
+  #     PORT: 3000
+  #     NODE_ENV: "production"
+  #   ports:
+  #     - "3001:3000"
