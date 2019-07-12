@@ -30,5 +30,5 @@ cd /home/Node-Server-Docker/app/
 sudo npm install
 sleep 20
 
-cd ..
+cd /home/Node-Server-Docker/
 sudo bash run.sh build
