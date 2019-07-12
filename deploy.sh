@@ -28,5 +28,5 @@ sleep 2
 # Build images and run
 cd app
 sleep 2
-npm -i
-bash run.sh build
+sudo npm -i
+sudo bash run.sh build

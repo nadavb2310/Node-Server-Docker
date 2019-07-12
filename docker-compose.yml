@@ -12,7 +12,7 @@ services:
     build: ./app
     environment:
     links:
-      - app1
+      - app1:app1
       PORT: 3000
       NODE_ENV: "production"
     ports:
@@ -21,7 +21,7 @@ services:
   app2:
     build: ./app
     links:
-      - app2
+      - app2:app2
     environment:
       PORT: 3000
       NODE_ENV: "production"
