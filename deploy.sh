@@ -26,7 +26,7 @@ docker-compose -v
 sleep 2
 
 # Build images and run
-cd app
+cd app/
 sleep 2
 sudo npm -i
 sudo bash run.sh build
