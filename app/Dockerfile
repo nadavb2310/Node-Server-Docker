@@ -22,5 +22,5 @@ EXPOSE 3000
 
 ENTRYPOINT [ "pm2", "start", "app.js", "--name", "node-server", "--log", "/var/log/pm2/pm2.log", "--watch", "--no-daemon" ]
 
-CMD [ "node", "app.js" ]
-#CMD npm start
+#CMD [ "node", "app.js" ]
+CMD npm start
