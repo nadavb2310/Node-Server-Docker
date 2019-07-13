@@ -4,7 +4,7 @@ FROM nginx:latest
 VOLUME /var/cache/nginx
 
 # Copy custom configuration file from the current directory
-COPY ./.docker/config/nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY ./public /var/www/public
 
