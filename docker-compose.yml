@@ -1,26 +1,30 @@
-version: '3'
+version: '2'
 services:
-  app1:
-      build: ./app
-      environment:
-          APP_NAME: "application 1"
-          PORT: 3000
-          NODE_ENV: "production"
-  #app2:
-      #consider getting nagios image.
-      # environment:
-      #     APP_NAME: "application 2"
-      #     PORT: 3000
-      #     NODE_ENV: "production"
   nginx:
-      build: ./nginx
-      image: my-nginx:latest
-      ports:
-        - 8080:80
-      links:
-        - app1:app1
-      #- app2:app2
-
-network: 
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: ./nginx/Dockerfile
+    image: my-nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - app1:app1
+    networks:
+      - nodeapp-network
+  app1:
+    container_name: node-server-app1
+    build: 
+      context: ./app
+      dockerfile: ./app/Dockerfile
+    ports:
+      - "8080"
+    volumes: 
+      - .:/var/www/app
+    working_dir: /var/www/app
+    networks: 
+      - nodeapp-network
+networks: 
   nodeapp-network:
     driver: bridge

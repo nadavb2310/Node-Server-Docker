@@ -1,4 +1,4 @@
-FROM node:4-onbuild
+FROM node:latest
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -13,10 +13,14 @@ RUN npm install
 # RUN npm ci --only=production
 
 # Bundle app source
-COPY . .
+#COPY . .
 
-RUN npm install -g pm2
+RUN npm install -g pm2@latest
+RUN mkdir -p /var/log/pm2
 
 EXPOSE 3000
+
+ENTRYPOINT [ "pm2", "start", "app.js", "--name", "node-server", "--log", "/var/log/pm2/pm2.log", "--watch", "--no-daemon" ]
+
 CMD [ "node", "app.js" ]
 #CMD npm start
