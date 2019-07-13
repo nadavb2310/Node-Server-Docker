@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     image: my-nginx:latest
     ports:
-      - "8080:8080"
+      - "80"
     links:
       - app1:app1
     networks:
