@@ -6,9 +6,7 @@ VOLUME /var/cache/nginx
 # Copy custom configuration file from the current directory
 COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY ./public /var/www/public
-
-EXPOSE 80 443
+EXPOSE 8080
 
 #sets daemon off
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
