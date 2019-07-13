@@ -17,6 +17,7 @@ services:
     build: 
       context: ./app
       dockerfile: Dockerfile
+    image: nodeserverdocker_app1:latest
     ports:
       - "3000"
     volumes: 

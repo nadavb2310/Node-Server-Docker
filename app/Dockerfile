@@ -13,7 +13,7 @@ RUN npm install
 # RUN npm ci --only=production
 
 # Bundle app source
-#COPY . .
+COPY . .
 
 RUN npm install -g pm2@latest
 RUN mkdir -p /var/log/pm2
