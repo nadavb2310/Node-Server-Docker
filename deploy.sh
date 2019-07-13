@@ -26,7 +26,15 @@ docker-compose -v
 sleep 2
 
 # Build images and run
+sleep 2
+echo "Moving to /home/nadavb2310/Node-Server-Docker/app"
 cd /home/nadavb2310/Node-Server-Docker/app
+echo "======================================"
+echo "Starting Npm Install for App."
+echo "======================================"
 sudo npm install
+echo "======================================"
+echo "Moving to /home/nadavb2310/Node-Server-Docker/"
+echo "======================================"
 cd /home/nadavb2310/Node-Server-Docker/
 sudo bash run.sh build
