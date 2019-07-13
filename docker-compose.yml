@@ -7,9 +7,11 @@ services:
       dockerfile: Dockerfile
     image: my-nginx:latest
     ports:
-      - "80"
+      - "80:8080"
     links:
       - app1:app1
+    depends_on:
+      - app1
     networks:
       - nodeapp-network
   app1:
@@ -19,7 +21,7 @@ services:
       dockerfile: Dockerfile
     image: nodeserverdocker_app1:latest
     ports:
-      - "3000"
+      - "80:3000"
     volumes: 
       - .:/var/www/app
     working_dir: /var/www/app
