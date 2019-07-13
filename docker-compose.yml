@@ -20,3 +20,7 @@ services:
       links:
         - app1:app1
       #- app2:app2
+
+network: 
+  nodeapp-network:
+    driver: bridge

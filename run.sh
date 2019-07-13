@@ -1,12 +1,16 @@
 #!/bin/bash
 
 build(){
+  echo "App log: docker compose down"
   docker-compose down
+  echo "App log: docker compose build"
   docker-compose build
 }
 
 run(){
+  echo "App log: docker compose down"
   docker-compose down
+  echo "App log: docker compose up"
   docker-compose up -d
 }
 
