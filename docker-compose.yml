@@ -10,8 +10,6 @@ services:
       - "80:8080"
     links:
       - app1:app1
-    depends_on:
-      - app1
     networks:
       - nodeapp-network
   app1:
@@ -20,13 +18,25 @@ services:
       context: ./app
       dockerfile: Dockerfile
     image: nodeserverdocker_app1:latest
+    links:
+      - elasticsearch
     ports:
-      - "80:3000"
+      - "8080:3000"
     volumes: 
       - .:/var/www/app
     working_dir: /var/www/app
     networks: 
       - nodeapp-network
+  elasticsearch:
+    image: elasticsearch
+    environment:
+        ELASTICSEARCH_USER: youruser
+        ELASTICSEARCH_PASS: yourpw
+    ports:
+        - "9200:9200"
+    networks: 
+        - nodeapp-network
 networks: 
   nodeapp-network:
-    driver: bridge
+    driver: overlay
+    #overlay option.
