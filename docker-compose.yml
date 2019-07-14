@@ -21,14 +21,14 @@ services:
     links:
       - elasticsearch
     ports:
-      - "8080:3000"
+      - "80:3000"
     volumes: 
       - .:/var/www/app
     working_dir: /var/www/app
     networks: 
       - nodeapp-network
   elasticsearch:
-    image: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch
     environment:
         ELASTICSEARCH_USER: youruser
         ELASTICSEARCH_PASS: yourpw
@@ -38,5 +38,5 @@ services:
         - nodeapp-network
 networks: 
   nodeapp-network:
-    driver: overlay
+    driver: bridge
     #overlay option.
