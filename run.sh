@@ -11,7 +11,7 @@ run(){
   echo "App log: docker compose down"
   docker-compose down
   echo "App log: docker compose up"
-  docker-compose up -d
+  docker-compose --verbose up -d
 }
 
 check_dependencies_and_run(){
