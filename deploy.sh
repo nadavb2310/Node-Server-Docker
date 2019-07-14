@@ -27,14 +27,14 @@ sleep 2
 
 # Build images and run
 sleep 2
-echo "Moving to /home/nadavb2310/Node-Server-Docker/app"
+echo "Moving to /home/Node-Server-Docker/app"
 cd /home/Node-Server-Docker/app
 echo "======================================"
 echo "Starting Npm Install for App."
 echo "======================================"
 sudo npm install
 echo "======================================"
-echo "Moving to /home/nadavb2310/Node-Server-Docker/"
+echo "Moving to /home/Node-Server-Docker/"
 echo "======================================"
 cd /home/Node-Server-Docker/
 sudo bash run.sh build
